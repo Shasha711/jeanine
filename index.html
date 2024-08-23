@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Portfolio</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #E0E0E0; 
+            background-color: #56acbb; 
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: #708090; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            color: #E0E0E0; 
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #E0E0E0; 
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+
+        .navbar a:hover {
+            color: #502710; 
+        }
+
+        .home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .home-content {
+            max-width: 700px;
+        }
+
+        .home-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #090904; 
+        }
+
+        .home-content span {
+            color: #090904; 
+        }
+
+        .home-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #090904;  
+        }
+
+        .home-content p {
+            color: #E0E0E0; 
+            text-align: left;
+            font-size: 16px;
+            margin: 20px 0 40px;
+        }
+
+        .btn-box {
+            display: flex;
+            justify-content: space-between;
+            width: 345px;
+            height: 50px;
+        }
+
+        .btn-box a {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 100%;
+            background: #91cbd6; 
+            border: 2px solid #91cbd6; 
+            border-radius: 8px;
+            font-size: 19px;
+            color: #06080a; 
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .btn-box a:hover::before {
+            background: #4f2f42; 
+            
+        }
+
+        .home-sci {
+            position: absolute;
+            bottom: 40px;
+            width: 350px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .home-sci a {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            
+            border: 2px solid #3d240c; 
+            border-radius: 50%;
+            font-size: 20px;
+            color: #46200e; 
+            text-decoration: none;
+            z-index: 1;
+            overflow: hidden;
+            transition: .5s;
+        }
+
+        .home-sci a:hover {
+            color: #E0E0E0;
+        }
+
+        .home-sci a:hover::before {
+            background: #3f2207; 
+        }
+
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #708090; 
+            height: 50vh;
+        }
+
+        .about h1, .about p {
+            color: #E0E0E0; 
+        }
+
+        .about-container {
+            width: 50%;
+        }
+
+        .about h1 {
+            font-weight: 700;
+            font-size: 40px;
+        }
+
+        .services {
+            background-color: #708090; 
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50vh;
+        }
+
+        .box p, .box h3 {
+            color: #E0E0E0; 
+        }
+
+        .card {
+            border: solid #41290a; 
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .services h2 {
+            padding-top: 50px;
+            font-size: 40px;
+            font-weight: 700;
+            color: #E0E0E0;
+        }
+
+        .portfolio-container {
+            background-color: #708090; 
+            padding-bottom: 50px;
+        }
+
+        .portfolio-container h1, .portfolio-container h2 {
+            color: #E0E0E0;
+        }
+
+        .websites, .digitalarts {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .contact {
+            padding-top: 50px;
+            background-color:  #56acbb; 
+        }
+
+        .contactme h1 {
+            font-size: 40px;
+            color: #000000; 
+        }
+
+        .contactme {
+            display: grid;
+            justify-content: center;
+        }
+
+        .info {
+            background: #708090; 
+            padding: 20px;
+            border-radius: 15px;
+            color: #E0E0E0; 
+        }
+
+        footer {
+            background:#91cbd6;  
+            color: #E0E0E0; 
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Jeanine Ann Soriano</a>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi! I am <span>Jeanine!</span></h1>
+            <h3><span class="multiple-text"></span></h3>
+            <p>As a computer science student, you learn to solve problems by understanding computer systems, writing code, and applying your skills to practical projects while staying updated with new technology.</p>
+            <div class="btn-box">
+                <a href="#contact">Contact Me</a>
+                <a href="#about">Check me</a>
+            </div>
+        </div>
+
+        <div class="home-sci">
+            <a href="https://www.facebook.com/" target="_blank" title="Facebook">
+                <i class="bx bxl-facebook"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" title="Twitter">
+                <i class="bx bxl-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" title="Instagram">
+                <i class="bx bxl-instagram"></i>
+            </a>
+        </div>
+        </div>
+            
+       
+    </section>
+    <section class="about" id="about">
+        <div class="about-container">
+            <h1>About me!</h1><br>
+            <p>Hi, I'm Jeanine Soriano, a computer science student with a keen interest in technology and problem-solving. I’m currently exploring the fundamentals of computing, from coding and algorithms to hands-on project development. I thrive on tackling complex challenges and applying my skills to create innovative solutions. </p>
+        </div>
+        
+    </section>
+    <section class="services" id="services">
+      
+        <br><h2>services</h2><br />
+            <div class="services">
+        <div class="box">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1 class="card-title">Custom Website Design</h1>
+
+                    <p class="card-text">’m passionate about crafting unique, tailor-made websites that reflect individual brands and meet specific needs. My expertise includes designing intuitive user interfaces, creating engaging visual elements, and ensuring a seamless user experience.
+                         With a blend of creativity and technical skills</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1 class="card-title">Responsive Web Development</h1>
+
+                    <p class="card-text">Hi, I’m Jeanine!, a dedicated computer science student specializing in Responsive Web Development. 
+                        My studies and projects have equipped me with skills in HTML, CSS, and JavaScript, as well as an understanding of modern frameworks and design principles. 
+                        I’m excited about the challenge of designing user-friendly interfaces and optimizing web experiences to meet the needs of diverse users.</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1 class="card-title">Art Commission</h1>
+
+                    <p class="card-text">My approach combines creativity with attention to detail to ensure each piece reflects the individual style and preferences of my clients. 
+                        I love bringing unique visions to life through personalized artwork, whether it's for portraits, illustrations, or graphic designs.
+                        I’m excited to collaborate with you to create something truly special and memorable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-container">
+       
+            <br><h2>Websites</h2><br />
+            <div class="websites">
+                <img src="web1.png" height="300px" alt="Website 1">
+                <img src="web2.jpg" height="300px" alt="Website 2">
+            </div><br>
+            
+    </section>
+    <section class="contact" id="contact">
+        <div class="contactme">
+            <center>
+                <h1>Contact me here!</h1><br />
+            </center>
+            <div class="info">
+                <p><i class='bx bx-user'></i> Jeanine Soriano</p>
+                <p><i class='bx bx-envelope'></i> sjeanineann@gmail.com</p>
+                <p><i class='bx bx-phone-call'></i> 09973006183</p>
+            </div>
+        </div><br><br>
+    </section>
+    <footer style="background: #2f4f4f; color: #E0E0E0;">
+        <center>All rights reserved to me @ 2k24</center>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".multiple-text", {
+            strings: [
+                "Computer Science Student",
+                "3rd year college student",
+              
+            ],
+            typeSpeed: 40,
+            backSpeed: 40,
+            backDelay: 1000,
+            startDelay: 500,
+            loop: true,
+            cursorChar: '|',
+            smartBackspace: true
+        });
+    </script>
+</body>
+</html>
